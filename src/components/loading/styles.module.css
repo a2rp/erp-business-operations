@@ -1,0 +1,23 @@
+﻿@keyframes spin { to { transform: rotate(360deg); } }
+
+.loading {
+    display: grid;
+    min-height: 45vh;
+    place-items: center;
+
+    span {
+        width: 42px;
+        aspect-ratio: 1;
+        border: 3px solid #e8d9c8;
+        border-top-color: #c66d3b;
+        border-radius: 50%;
+        animation: spin 750ms linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        span { animation-duration: 2s; }
+    }
+}
+
+
+
