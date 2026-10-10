@@ -5,128 +5,602 @@
     .welcome {
         min-height: 264px;
         display: grid;
-        grid-template-columns: 1.15fr .85fr;
+        grid-template-columns: 1.15fr 0.85fr;
         overflow: hidden;
         border: 1px solid #e4d8c9;
         border-radius: 20px;
         background: #eee6d9;
         box-shadow: var(--shadow-card);
 
-        @media (max-width: 760px) { grid-template-columns: 1fr; }
+        @media (max-width: 760px) {
+            grid-template-columns: 1fr;
+        }
     }
 
-    .welcomeCopy { display: flex; align-items: flex-start; flex-direction: column; justify-content: center; padding: 31px 38px; }
-    .date { display: flex; align-items: center; gap: 8px; color: #7b6755; font-size: 13px; font-weight: 650; }
-    .date svg { font-size: 15px; }
-    h1 { margin-top: 17px; font-size: clamp(30px, 4vw, 43px); line-height: 1.12; letter-spacing: -1.7px; }
-    .welcomeCopy > p { margin-top: 9px; color: #667173; font-size: 16px; }
-    .welcomeButton { min-height: 43px; display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 0 16px; border: 1px solid var(--color-ink); border-radius: 9px; color: white; background: var(--color-ink); font-size: 14px; font-weight: 700; cursor: pointer; transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease; }
-    .welcomeButton:hover { border-color: var(--color-copper-dark); background: var(--color-copper-dark); box-shadow: 0 5px 15px rgb(132 67 36 / 17%); }
+    .welcomeCopy {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 31px 38px;
+    }
+    .date {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #7b6755;
+        font-size: 13px;
+        font-weight: 650;
+    }
+    .date svg {
+        font-size: 15px;
+    }
+    h1 {
+        margin-top: 17px;
+        font-size: clamp(30px, 4vw, 43px);
+        line-height: 1.12;
+        letter-spacing: -1.7px;
+    }
+    .welcomeCopy > p {
+        margin-top: 9px;
+        color: #667173;
+        font-size: 16px;
+    }
+    .welcomeButton {
+        min-height: 43px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 22px;
+        padding: 0 16px;
+        border: 1px solid var(--color-ink);
+        border-radius: 9px;
+        color: white;
+        background: var(--color-ink);
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease,
+            background-color 160ms ease;
+    }
+    .welcomeButton:hover {
+        border-color: var(--color-copper-dark);
+        background: var(--color-copper-dark);
+        box-shadow: 0 5px 15px rgb(132 67 36 / 17%);
+    }
 
-    .welcomeImage { position: relative; min-height: 264px; overflow: hidden; background: #8a735f; }
-    .welcomeImage img { width: 100%; height: 100%; min-height: 264px; object-fit: cover; object-position: center 54%; }
-    .welcomeImage::after { position: absolute; inset: 35% 0 0; background: linear-gradient(transparent, rgb(21 29 30 / 62%)); content: ""; }
-    .imageNote { position: absolute; z-index: 1; right: 20px; bottom: 19px; left: 20px; display: flex; align-items: center; gap: 12px; color: white; }
-    .imageNote > svg:first-child { width: 39px; height: 39px; padding: 10px; border: 1px solid rgb(255 255 255 / 34%); border-radius: 11px; background: rgb(255 255 255 / 14%); }
-    .imageNote > svg:last-child { margin-left: auto; font-size: 19px; }
-    .imageNote span { display: grid; gap: 1px; }
-    .imageNote strong { font-size: 14px; }
-    .imageNote small { color: rgb(255 255 255 / 82%); font-size: 13px; }
+    .welcomeImage {
+        position: relative;
+        min-height: 264px;
+        overflow: hidden;
+        background: #8a735f;
+    }
+    .welcomeImage img {
+        width: 100%;
+        height: 100%;
+        min-height: 264px;
+        object-fit: cover;
+        object-position: center 54%;
+    }
+    .welcomeImage::after {
+        position: absolute;
+        inset: 35% 0 0;
+        background: linear-gradient(transparent, rgb(21 29 30 / 62%));
+        content: "";
+    }
+    .imageNote {
+        position: absolute;
+        z-index: 1;
+        right: 20px;
+        bottom: 19px;
+        left: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+    }
+    .imageNote > svg:first-child {
+        width: 39px;
+        height: 39px;
+        padding: 10px;
+        border: 1px solid rgb(255 255 255 / 34%);
+        border-radius: 11px;
+        background: rgb(255 255 255 / 14%);
+    }
+    .imageNote > svg:last-child {
+        margin-left: auto;
+        font-size: 19px;
+    }
+    .imageNote span {
+        display: grid;
+        gap: 1px;
+    }
+    .imageNote strong {
+        font-size: 14px;
+    }
+    .imageNote small {
+        color: rgb(255 255 255 / 82%);
+        font-size: 13px;
+    }
 
-    .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-    .metric { position: relative; min-height: 135px; display: flex; align-items: flex-start; gap: 13px; padding: 19px 17px; border: 1px solid var(--color-border); border-radius: 14px; background: var(--color-surface); box-shadow: 0 7px 20px rgb(35 31 27 / 3%); transition: border-color 160ms ease, box-shadow 160ms ease; }
-    .metric:hover { border-color: #d1a27f; box-shadow: 0 10px 22px rgb(79 52 35 / 9%); }
-    .metricIcon { width: 40px; height: 40px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 11px; color: var(--color-copper-dark); background: #f8eee4; font-size: 18px; }
-    .metricCopy { min-width: 0; display: grid; gap: 3px; }
-    .metricCopy > span { color: var(--color-muted); font-size: 13px; }
-    .metricCopy strong { font-size: 26px; line-height: 1.15; letter-spacing: -.6px; }
-    .metricCopy small { margin-top: 3px; overflow: hidden; color: #828b87; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
-    .metricLink { position: absolute; right: 14px; bottom: 14px; display: flex; align-items: center; gap: 4px; color: #858c89; font-size: 13px; }
-    .metricLink svg { font-size: 14px; }
-    .metricWarn .metricIcon { color: #9c572f; background: #fbefdf; }
+    .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+    }
+    .metric {
+        position: relative;
+        min-height: 135px;
+        display: flex;
+        align-items: flex-start;
+        gap: 13px;
+        padding: 19px 17px;
+        border: 1px solid var(--color-border);
+        border-radius: 14px;
+        background: var(--color-surface);
+        box-shadow: 0 7px 20px rgb(35 31 27 / 3%);
+        transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+    }
+    .metric:hover {
+        border-color: #d1a27f;
+        box-shadow: 0 10px 22px rgb(79 52 35 / 9%);
+    }
+    .metricIcon {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 11px;
+        color: var(--color-copper-dark);
+        background: #f8eee4;
+        font-size: 18px;
+    }
+    .metricCopy {
+        min-width: 0;
+        display: grid;
+        gap: 3px;
+    }
+    .metricCopy > span {
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .metricCopy strong {
+        font-size: 26px;
+        line-height: 1.15;
+        letter-spacing: -0.6px;
+    }
+    .metricCopy small {
+        margin-top: 3px;
+        overflow: hidden;
+        color: #828b87;
+        font-size: 13px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .metricLink {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: #858c89;
+        font-size: 13px;
+    }
+    .metricLink svg {
+        font-size: 14px;
+    }
+    .metricWarn .metricIcon {
+        color: #9c572f;
+        background: #fbefdf;
+    }
 
-    .workGrid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
+    .workGrid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 16px;
+    }
     .panel,
-    .quickPanel { min-width: 0; padding: 22px; border: 1px solid var(--color-border); border-radius: 15px; background: var(--color-surface); box-shadow: 0 7px 20px rgb(35 31 27 / 3%); }
-    .panelHeading { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
-    .panelHeading h2 { font-size: 18px; letter-spacing: -.25px; }
-    .panelHeading p { margin-top: 3px; color: var(--color-muted); font-size: 13px; }
-    .panelHeading > a { display: inline-flex; align-items: center; gap: 5px; color: var(--color-copper-dark); font-size: 13px; font-weight: 700; white-space: nowrap; }
-    .panelHeading > a:hover { color: var(--color-ink); }
-    .panelHeading > a svg { font-size: 15px; }
-    .flowTotal { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--color-border); }
-    .flowTotal strong { font-size: 24px; }
-    .flowTotal strong span { color: var(--color-muted); font-size: 13px; font-weight: 500; }
-    .flowValue { color: var(--color-muted); font-size: 13px; }
-    .flowList { display: grid; gap: 16px; padding: 19px 0 17px; }
-    .flowRow { display: grid; grid-template-columns: 145px minmax(0, 1fr) 25px; align-items: center; gap: 12px; color: #586366; font-size: 13px; }
-    .flowRow strong { color: var(--color-ink); text-align: right; font-size: 13px; }
-    .track { height: 8px; overflow: hidden; border-radius: 99px; background: #eeeae4; }
-    .track > span { height: 100%; display: block; border-radius: inherit; background: #bd663d; }
-    .stageAwaitingpayment { background: #d9a24c !important; }
-    .stageReadytoship { background: #7a9170 !important; }
-    .stageShipped { background: #527e73 !important; }
-    .panelFoot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 13px; border-top: 1px solid var(--color-border); color: #818a86; font-size: 13px; }
-    .panelFoot > span { display: flex; align-items: center; gap: 7px; }
-    .panelFoot i { width: 7px; height: 7px; border-radius: 50%; background: #5c9a73; }
-    .panelFoot a { display: flex; align-items: center; gap: 5px; color: var(--color-copper-dark); font-weight: 650; }
+    .quickPanel {
+        min-width: 0;
+        padding: 22px;
+        border: 1px solid var(--color-border);
+        border-radius: 15px;
+        background: var(--color-surface);
+        box-shadow: 0 7px 20px rgb(35 31 27 / 3%);
+    }
+    .panelHeading {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+    }
+    .panelHeading h2 {
+        font-size: 18px;
+        letter-spacing: -0.25px;
+    }
+    .panelHeading p {
+        margin-top: 3px;
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .panelHeading > a {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--color-copper-dark);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    .panelHeading > a:hover {
+        color: var(--color-ink);
+    }
+    .panelHeading > a svg {
+        font-size: 15px;
+    }
+    .flowTotal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-top: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--color-border);
+    }
+    .flowTotal strong {
+        font-size: 24px;
+    }
+    .flowTotal strong span {
+        color: var(--color-muted);
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .flowValue {
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .flowList {
+        display: grid;
+        gap: 16px;
+        padding: 19px 0 17px;
+    }
+    .flowRow {
+        display: grid;
+        grid-template-columns: 145px minmax(0, 1fr) 25px;
+        align-items: center;
+        gap: 12px;
+        color: #586366;
+        font-size: 13px;
+    }
+    .flowRow strong {
+        color: var(--color-ink);
+        text-align: right;
+        font-size: 13px;
+    }
+    .track {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 99px;
+        background: #eeeae4;
+    }
+    .track > span {
+        height: 100%;
+        display: block;
+        border-radius: inherit;
+        background: #bd663d;
+    }
+    .stageAwaitingpayment {
+        background: #d9a24c !important;
+    }
+    .stageReadytoship {
+        background: #7a9170 !important;
+    }
+    .stageShipped {
+        background: #527e73 !important;
+    }
+    .panelFoot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 13px;
+        border-top: 1px solid var(--color-border);
+        color: #818a86;
+        font-size: 13px;
+    }
+    .panelFoot > span {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+    .panelFoot i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #5c9a73;
+    }
+    .panelFoot a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--color-copper-dark);
+        font-weight: 650;
+    }
 
-    .attentionCount { min-width: 27px; height: 27px; display: grid; place-items: center; border-radius: 8px; color: #9e5c32; background: #f8eee4; font-size: 13px; font-weight: 750; }
-    .attentionRow { display: flex; align-items: center; gap: 11px; padding: 14px 0; border-bottom: 1px solid #efebe4; }
-    .attentionRow:first-of-type { margin-top: 7px; }
-    .attentionRow > span:nth-child(2) { min-width: 0; display: grid; gap: 2px; flex: 1; }
-    .attentionRow strong { overflow: hidden; font-size: 14px; text-overflow: ellipsis; white-space: nowrap; }
-    .attentionRow small { overflow: hidden; color: var(--color-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
-    .attentionIcon { width: 37px; height: 37px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 10px; color: #9b592e; background: #f8eee4; font-size: 17px; }
-    .attentionIcon.truck { color: #467264; background: #e9f2ec; }
+    .attentionCount {
+        min-width: 27px;
+        height: 27px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        color: #9e5c32;
+        background: #f8eee4;
+        font-size: 13px;
+        font-weight: 750;
+    }
+    .attentionRow {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding: 14px 0;
+        border-bottom: 1px solid #efebe4;
+    }
+    .attentionRow:first-of-type {
+        margin-top: 7px;
+    }
+    .attentionRow > span:nth-child(2) {
+        min-width: 0;
+        display: grid;
+        gap: 2px;
+        flex: 1;
+    }
+    .attentionRow strong {
+        overflow: hidden;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .attentionRow small {
+        overflow: hidden;
+        color: var(--color-muted);
+        font-size: 13px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .attentionIcon {
+        width: 37px;
+        height: 37px;
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 10px;
+        color: #9b592e;
+        background: #f8eee4;
+        font-size: 17px;
+    }
+    .attentionIcon.truck {
+        color: #467264;
+        background: #e9f2ec;
+    }
     .attentionRow > a,
-    .attentionRow > button { width: 34px; height: 34px; display: grid; flex: 0 0 auto; place-items: center; border: 1px solid var(--color-border); border-radius: 9px; color: #687477; background: white; font-size: 17px; cursor: pointer; transition: border-color 150ms ease, box-shadow 150ms ease; }
+    .attentionRow > button {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        flex: 0 0 auto;
+        place-items: center;
+        border: 1px solid var(--color-border);
+        border-radius: 9px;
+        color: #687477;
+        background: white;
+        font-size: 17px;
+        cursor: pointer;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
+    }
     .attentionRow > a:hover,
-    .attentionRow > button:hover { border-color: #d2a17e; box-shadow: 0 4px 12px rgb(71 46 30 / 10%); }
-    .attentionLink { display: inline-flex; align-items: center; gap: 6px; margin-top: 13px; color: var(--color-copper-dark); font-size: 13px; font-weight: 700; }
-    .allClear { display: flex; align-items: center; gap: 10px; margin: 26px 0 10px; padding: 15px; border-radius: 11px; color: #426b55; background: #edf4ee; font-size: 14px; }
-    .allClear svg { flex: 0 0 auto; font-size: 19px; }
+    .attentionRow > button:hover {
+        border-color: #d2a17e;
+        box-shadow: 0 4px 12px rgb(71 46 30 / 10%);
+    }
+    .attentionLink {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 13px;
+        color: var(--color-copper-dark);
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .allClear {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 26px 0 10px;
+        padding: 15px;
+        border-radius: 11px;
+        color: #426b55;
+        background: #edf4ee;
+        font-size: 14px;
+    }
+    .allClear svg {
+        flex: 0 0 auto;
+        font-size: 19px;
+    }
 
-    .bottomGrid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
-    .workspaceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 17px; }
-    .workspaceLink { position: relative; min-height: 92px; display: grid; grid-template-columns: 38px 1fr; align-content: center; column-gap: 11px; padding: 12px; border: 1px solid #eee8df; border-radius: 11px; background: #fffefa; transition: border-color 150ms ease, box-shadow 150ms ease; }
-    .workspaceLink:hover { border-color: #d1a27f; box-shadow: 0 5px 15px rgb(79 52 35 / 8%); }
-    .workspaceLink > span { grid-row: span 2; width: 37px; height: 37px; display: grid; place-items: center; border-radius: 10px; color: var(--color-copper-dark); background: #f8eee4; font-size: 17px; }
-    .workspaceLink strong { align-self: end; font-size: 14px; }
-    .workspaceLink small { color: var(--color-muted); font-size: 13px; }
-    .workspaceArrow { position: absolute; top: 12px; right: 11px; color: #919794; font-size: 15px; }
+    .bottomGrid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 16px;
+    }
+    .workspaceGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 17px;
+    }
+    .workspaceLink {
+        position: relative;
+        min-height: 92px;
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        align-content: center;
+        column-gap: 11px;
+        padding: 12px;
+        border: 1px solid #eee8df;
+        border-radius: 11px;
+        background: #fffefa;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
+    }
+    .workspaceLink:hover {
+        border-color: #d1a27f;
+        box-shadow: 0 5px 15px rgb(79 52 35 / 8%);
+    }
+    .workspaceLink > span {
+        grid-row: span 2;
+        width: 37px;
+        height: 37px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        color: var(--color-copper-dark);
+        background: #f8eee4;
+        font-size: 17px;
+    }
+    .workspaceLink strong {
+        align-self: end;
+        font-size: 14px;
+    }
+    .workspaceLink small {
+        color: var(--color-muted);
+        font-size: 13px;
+    }
+    .workspaceArrow {
+        position: absolute;
+        top: 12px;
+        right: 11px;
+        color: #919794;
+        font-size: 15px;
+    }
 
-    .imagePanel { position: relative; min-height: 225px; overflow: hidden; border-radius: 15px; background: #6e6a60; }
-    .imagePanel > img { width: 100%; height: 100%; min-height: 225px; object-fit: cover; }
-    .imagePanel::after { position: absolute; inset: 22% 0 0; background: linear-gradient(transparent, rgb(20 28 29 / 78%)); content: ""; }
-    .imageOverlay { position: absolute; z-index: 1; right: 20px; bottom: 19px; left: 20px; display: grid; gap: 4px; color: white; }
-    .imageOverlay span { color: rgb(255 255 255 / 82%); font-size: 13px; }
-    .imageOverlay strong { max-width: 380px; font-size: 18px; line-height: 1.35; }
-    .imageOverlay a { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; color: white; font-size: 13px; font-weight: 700; }
-    .imageOverlay a svg { transition: transform 150ms ease; }
-    .imageOverlay a:hover svg { transform: translateX(3px); }
+    .imagePanel {
+        position: relative;
+        min-height: 225px;
+        overflow: hidden;
+        border-radius: 15px;
+        background: #6e6a60;
+    }
+    .imagePanel > img {
+        width: 100%;
+        height: 100%;
+        min-height: 225px;
+        object-fit: cover;
+    }
+    .imagePanel::after {
+        position: absolute;
+        inset: 22% 0 0;
+        background: linear-gradient(transparent, rgb(20 28 29 / 78%));
+        content: "";
+    }
+    .imageOverlay {
+        position: absolute;
+        z-index: 1;
+        right: 20px;
+        bottom: 19px;
+        left: 20px;
+        display: grid;
+        gap: 4px;
+        color: white;
+    }
+    .imageOverlay span {
+        color: rgb(255 255 255 / 82%);
+        font-size: 13px;
+    }
+    .imageOverlay strong {
+        max-width: 380px;
+        font-size: 18px;
+        line-height: 1.35;
+    }
+    .imageOverlay a {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        margin-top: 6px;
+        color: white;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .imageOverlay a svg {
+        transition: transform 150ms ease;
+    }
+    .imageOverlay a:hover svg {
+        transform: translateX(3px);
+    }
 
     @media (max-width: 1000px) {
-        .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        .workGrid, .bottomGrid { grid-template-columns: 1fr; }
+        .metrics {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .workGrid,
+        .bottomGrid {
+            grid-template-columns: 1fr;
+        }
     }
     @media (max-width: 600px) {
         gap: 16px;
-        .welcomeCopy { padding: 25px 22px; }
-        h1 { font-size: 32px; }
-        .metrics { grid-template-columns: 1fr 1fr; gap: 9px; }
-        .metric { min-height: 131px; gap: 8px; padding: 13px 12px; }
-        .metricIcon { width: 34px; height: 34px; font-size: 16px; }
-        .metricCopy strong { font-size: 22px; }
-        .metricCopy small { white-space: normal; }
-        .metricLink { display: none; }
+        .welcomeCopy {
+            padding: 25px 22px;
+        }
+        h1 {
+            font-size: 32px;
+        }
+        .metrics {
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+        .metric {
+            min-height: 131px;
+            gap: 8px;
+            padding: 13px 12px;
+        }
+        .metricIcon {
+            width: 34px;
+            height: 34px;
+            font-size: 16px;
+        }
+        .metricCopy strong {
+            font-size: 22px;
+        }
+        .metricCopy small {
+            white-space: normal;
+        }
+        .metricLink {
+            display: none;
+        }
 
-        .panel, .quickPanel { padding: 17px; }
-        .flowRow { grid-template-columns: 105px minmax(0, 1fr) 20px; gap: 8px; }
-        .flowTotal { align-items: flex-start; flex-direction: column; }
-        .workspaceGrid { grid-template-columns: 1fr; }
+        .panel,
+        .quickPanel {
+            padding: 17px;
+        }
+        .flowRow {
+            grid-template-columns: 105px minmax(0, 1fr) 20px;
+            gap: 8px;
+        }
+        .flowTotal {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .workspaceGrid {
+            grid-template-columns: 1fr;
+        }
     }
 }
-
-
-

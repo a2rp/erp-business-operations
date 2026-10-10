@@ -1,4 +1,13 @@
-﻿@keyframes toast-in { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+﻿@keyframes toast-in {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .toastStack {
     position: fixed;
@@ -26,7 +35,9 @@
         pointer-events: auto;
         animation: toast-in 180ms ease-out;
 
-        > svg { font-size: 19px; }
+        > svg {
+            font-size: 19px;
+        }
 
         button {
             width: 31px;
@@ -39,15 +50,28 @@
             background: transparent;
             cursor: pointer;
 
-            &:hover { border-color: #d5e1da; box-shadow: 0 3px 10px rgb(32 62 46 / 9%); }
+            &:hover {
+                border-color: #d5e1da;
+                box-shadow: 0 3px 10px rgb(32 62 46 / 9%);
+            }
         }
 
-        &.info { border-color: #e6d4c5; color: #644730; }
-        &.error { border-color: #e7c3be; color: #8e392f; }
+        &.info {
+            border-color: #e6d4c5;
+            color: #644730;
+        }
+        &.error {
+            border-color: #e7c3be;
+            color: #8e392f;
+        }
     }
-    @media (max-width: 500px) { right: 16px; bottom: 16px; }
-    @media (prefers-reduced-motion: reduce) { .toast { animation-duration: 1ms; } }
+    @media (max-width: 500px) {
+        right: 16px;
+        bottom: 16px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .toast {
+            animation-duration: 1ms;
+        }
+    }
 }
-
-
-

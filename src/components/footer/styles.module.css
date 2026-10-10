@@ -25,9 +25,15 @@
         color: #707a78;
         font-size: 13px;
 
-        img { width: 35px; height: 35px; object-fit: contain; }
+        img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
 
-        p { font-size: 13px; }
+        p {
+            font-size: 13px;
+        }
 
         p a {
             display: inline-block;
@@ -36,7 +42,9 @@
             font-weight: 700;
             transition: color 150ms ease;
 
-            &:hover { color: var(--color-copper-dark); }
+            &:hover {
+                color: var(--color-copper-dark);
+            }
         }
     }
 
@@ -56,12 +64,23 @@
             border-radius: 9px;
             color: #737d7a;
             font-size: 18px;
-            transition: color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+            transition:
+                color 160ms ease,
+                border-color 160ms ease,
+                box-shadow 160ms ease,
+                background-color 160ms ease;
 
-            &:hover { color: var(--color-copper-dark); border-color: #ead3c0; background: #fffaf4; box-shadow: 0 4px 13px rgb(75 52 36 / 9%); }
+            &:hover {
+                color: var(--color-copper-dark);
+                border-color: #ead3c0;
+                background: #fffaf4;
+                box-shadow: 0 4px 13px rgb(75 52 36 / 9%);
+            }
         }
 
-        @media (max-width: 850px) { justify-content: flex-start; }
+        @media (max-width: 850px) {
+            justify-content: flex-start;
+        }
     }
 
     .tooltip {

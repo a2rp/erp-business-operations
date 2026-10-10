@@ -19,20 +19,21 @@ const ScrollToTop = () => {
 
 const AppRoutes = () => {
     const { pathname } = useLocation();
-    return <>
-        <ScrollToTop />
-        <Suspense key={pathname} fallback={<Loading />}>
-            <Routes>
-                <Route path="/" element={<Overview />} />
-                <Route path="/orders" element={<Orders />} />
-                <Route path="/inventory" element={<Inventory />} />
-                <Route path="/procurement" element={<Procurement />} />
-                <Route path="/finance" element={<Finance />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </Suspense>
-    </>;
+    return (
+        <>
+            <ScrollToTop />
+            <Suspense key={pathname} fallback={<Loading />}>
+                <Routes>
+                    <Route path="/" element={<Overview />} />
+                    <Route path="/orders" element={<Orders />} />
+                    <Route path="/inventory" element={<Inventory />} />
+                    <Route path="/procurement" element={<Procurement />} />
+                    <Route path="/finance" element={<Finance />} />
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </Suspense>
+        </>
+    );
 };
 
 export default AppRoutes;
-

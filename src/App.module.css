@@ -28,7 +28,8 @@
         background: var(--color-ink);
         transform: translateY(-160%);
 
-        &:focus { transform: translateY(0); }
+        &:focus {
+            transform: translateY(0);
+        }
     }
 }
-

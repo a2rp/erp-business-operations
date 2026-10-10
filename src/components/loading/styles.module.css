@@ -1,4 +1,8 @@
-﻿@keyframes spin { to { transform: rotate(360deg); } }
+﻿@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .loading {
     display: grid;
@@ -15,9 +19,8 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        span { animation-duration: 2s; }
+        span {
+            animation-duration: 2s;
+        }
     }
 }
-
-
-

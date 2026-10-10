@@ -9,9 +9,13 @@
     background: rgb(255 254 250 / 96%);
     box-shadow: 0 7px 24px rgb(35 31 27 / 4%);
     backdrop-filter: blur(16px);
-    transition: transform 220ms ease, box-shadow 180ms ease;
+    transition:
+        transform 220ms ease,
+        box-shadow 180ms ease;
 
-    &.hidden { transform: translateY(-110%); }
+    &.hidden {
+        transform: translateY(-110%);
+    }
 
     .headerInner {
         width: min(100% - 64px, 1500px);
@@ -40,7 +44,9 @@
         white-space: nowrap;
         transition: color 160ms ease;
 
-        &:hover { color: var(--color-copper-dark); }
+        &:hover {
+            color: var(--color-copper-dark);
+        }
 
         .brandMark {
             display: grid;
@@ -53,7 +59,9 @@
             font-size: 18px;
         }
 
-        .brandDot { color: var(--color-copper); }
+        .brandDot {
+            color: var(--color-copper);
+        }
     }
 
     .navigation {
@@ -70,7 +78,9 @@
             padding: 4px 0 2px;
             flex-basis: 100%;
 
-            &.navigationOpen { display: flex; }
+            &.navigationOpen {
+                display: flex;
+            }
         }
     }
 
@@ -86,9 +96,15 @@
         font-size: 14px;
         font-weight: 650;
         white-space: nowrap;
-        transition: color 170ms ease, background-color 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+        transition:
+            color 170ms ease,
+            background-color 170ms ease,
+            border-color 170ms ease,
+            box-shadow 170ms ease;
 
-        svg { font-size: 16px; }
+        svg {
+            font-size: 16px;
+        }
 
         &::after {
             position: absolute;
@@ -105,18 +121,33 @@
         }
 
         &:hover,
-        &:focus-visible { color: var(--color-ink); background: #f6f0e7; }
+        &:focus-visible {
+            color: var(--color-ink);
+            background: #f6f0e7;
+        }
 
         &:hover::after,
         &:focus-visible::after,
-        &.active::after { transform: scaleX(1); }
+        &.active::after {
+            transform: scaleX(1);
+        }
 
-        &.active { color: var(--color-ink); background: #f4eee5; }
+        &.active {
+            color: var(--color-ink);
+            background: #f4eee5;
+        }
     }
 
-    .headerActions { display: flex; align-items: center; gap: 9px; margin-left: auto; }
+    .headerActions {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-left: auto;
+    }
 
-    .createWrap { position: relative; }
+    .createWrap {
+        position: relative;
+    }
 
     .createButton,
     .repository {
@@ -134,15 +165,30 @@
         font-weight: 700;
         white-space: nowrap;
         cursor: pointer;
-        transition: border-color 170ms ease, box-shadow 170ms ease, background-color 170ms ease;
+        transition:
+            border-color 170ms ease,
+            box-shadow 170ms ease,
+            background-color 170ms ease;
 
-        &:hover { border-color: #d2a17e; box-shadow: 0 4px 14px rgb(98 58 31 / 10%); }
+        &:hover {
+            border-color: #d2a17e;
+            box-shadow: 0 4px 14px rgb(98 58 31 / 10%);
+        }
 
-        svg { font-size: 16px; }
+        svg {
+            font-size: 16px;
+        }
     }
 
-    .createButton { border-color: var(--color-ink); color: white; background: var(--color-ink); }
-    .createButton:hover { border-color: #31474a; background: #31474a; }
+    .createButton {
+        border-color: var(--color-ink);
+        color: white;
+        background: var(--color-ink);
+    }
+    .createButton:hover {
+        border-color: #31474a;
+        background: #31474a;
+    }
 
     .createMenu {
         position: absolute;
@@ -168,10 +214,17 @@
             text-align: left;
             font-size: 14px;
             cursor: pointer;
-            transition: background-color 150ms ease, color 150ms ease;
+            transition:
+                background-color 150ms ease,
+                color 150ms ease;
 
-            &:hover { color: var(--color-copper-dark); background: #f8f2eb; }
-            svg { font-size: 16px; }
+            &:hover {
+                color: var(--color-copper-dark);
+                background: #f8f2eb;
+            }
+            svg {
+                font-size: 16px;
+            }
         }
     }
 
@@ -186,15 +239,25 @@
         font-size: 17px;
         cursor: pointer;
 
-        @media (max-width: 760px) { display: grid; margin-left: auto; }
+        @media (max-width: 760px) {
+            display: grid;
+            margin-left: auto;
+        }
     }
 
     @media (max-width: 760px) {
-        .headerActions { margin-left: 0; }
-        .headerActions .repository { padding: 0 10px; }
-        .headerActions .repository span { display: inline; }
+        .headerActions {
+            margin-left: 0;
+        }
+        .headerActions .repository {
+            padding: 0 10px;
+        }
+        .headerActions .repository span {
+            display: inline;
+        }
     }
 
-    @media (prefers-reduced-motion: reduce) { transition: none; }
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
 }
-

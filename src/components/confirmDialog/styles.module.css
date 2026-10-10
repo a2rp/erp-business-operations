@@ -18,16 +18,92 @@
         box-shadow: 0 28px 80px rgb(16 23 24 / 26%);
     }
 
-    .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; color: #a44439; background: #fcedeb; font-size: 22px; }
-    .close { position: absolute; top: 16px; right: 16px; width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid var(--color-border); border-radius: 9px; color: var(--color-muted); background: white; cursor: pointer; transition: border-color 150ms ease, box-shadow 150ms ease; }
-    .close:hover { border-color: #d2a17e; box-shadow: 0 3px 12px rgb(71 46 30 / 10%); }
-    h2 { margin-top: 18px; font-size: 21px; }
-    p { margin-top: 8px; color: var(--color-muted); font-size: 15px; line-height: 1.55; }
-    .actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 25px; }
-    .actions button { min-height: 42px; padding: 0 15px; border: 1px solid var(--color-border); border-radius: 9px; background: white; font-size: 14px; font-weight: 700; cursor: pointer; transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease; }
-    .actions button:hover { border-color: #c8a58b; background: #fffaf4; box-shadow: 0 4px 12px rgb(98 58 31 / 9%); }
-    .actions .destructive { border-color: #a33f35; color: white; background: #a33f35; }
-    .actions .destructive:hover { border-color: #812f28; background: #812f28; box-shadow: 0 5px 14px rgb(129 47 40 / 20%); }
+    .icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        border-radius: 14px;
+        color: #a44439;
+        background: #fcedeb;
+        font-size: 22px;
+    }
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 36px;
+        height: 36px;
+        display: grid;
+        place-items: center;
+        border: 1px solid var(--color-border);
+        border-radius: 9px;
+        color: var(--color-muted);
+        background: white;
+        cursor: pointer;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease;
+    }
+    .close:hover {
+        border-color: #d2a17e;
+        box-shadow: 0 3px 12px rgb(71 46 30 / 10%);
+    }
+    h2 {
+        margin-top: 18px;
+        font-size: 21px;
+    }
+    p {
+        margin-top: 8px;
+        color: var(--color-muted);
+        font-size: 15px;
+        line-height: 1.55;
+    }
+    .actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 9px;
+        margin-top: 25px;
+    }
+    .actions button {
+        min-height: 42px;
+        padding: 0 15px;
+        border: 1px solid var(--color-border);
+        border-radius: 9px;
+        background: white;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        transition:
+            border-color 150ms ease,
+            box-shadow 150ms ease,
+            background-color 150ms ease;
+    }
+    .actions button:hover {
+        border-color: #c8a58b;
+        background: #fffaf4;
+        box-shadow: 0 4px 12px rgb(98 58 31 / 9%);
+    }
+    .actions .destructive {
+        border-color: #a33f35;
+        color: white;
+        background: #a33f35;
+    }
+    .actions .destructive:hover {
+        border-color: #812f28;
+        background: #812f28;
+        box-shadow: 0 5px 14px rgb(129 47 40 / 20%);
+    }
 
-    @media (max-width: 520px) { .confirm { padding: 23px; } .actions { flex-direction: column-reverse; } .actions button { width: 100%; } }
+    @media (max-width: 520px) {
+        .confirm {
+            padding: 23px;
+        }
+        .actions {
+            flex-direction: column-reverse;
+        }
+        .actions button {
+            width: 100%;
+        }
+    }
 }

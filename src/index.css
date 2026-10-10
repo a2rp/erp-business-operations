@@ -25,14 +25,21 @@
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
 
-    @media (prefers-reduced-motion: reduce) { scroll-behavior: auto; }
+    @media (prefers-reduced-motion: reduce) {
+        scroll-behavior: auto;
+    }
 }
 
 *,
 *::before,
-*::after { box-sizing: border-box; }
+*::after {
+    box-sizing: border-box;
+}
 
-* { margin: 0; padding: 0; }
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     min-width: 320px;
@@ -44,25 +51,43 @@ body {
 button,
 input,
 select,
-textarea { font: inherit; }
+textarea {
+    font: inherit;
+}
 
 button,
 a,
-select { -webkit-tap-highlight-color: transparent; }
+select {
+    -webkit-tap-highlight-color: transparent;
+}
 
-button { color: inherit; }
+button {
+    color: inherit;
+}
 
-a { color: inherit; text-decoration: none; }
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-img { display: block; max-width: 100%; }
+img {
+    display: block;
+    max-width: 100%;
+}
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
-textarea:focus-visible { outline: 3px solid rgb(188 99 56 / 38%); outline-offset: 3px; }
+textarea:focus-visible {
+    outline: 3px solid rgb(188 99 56 / 38%);
+    outline-offset: 3px;
+}
 
-::selection { color: #fff; background: var(--color-copper); }
+::selection {
+    color: #fff;
+    background: var(--color-copper);
+}
 
 .os-theme-ledgerly {
     --os-size: 9px;
@@ -74,5 +99,3 @@ textarea:focus-visible { outline: 3px solid rgb(188 99 56 / 38%); outline-offset
     --os-handle-bg-hover: rgb(188 99 56 / 66%);
     --os-handle-bg-active: rgb(148 71 35 / 82%);
 }
-
-
