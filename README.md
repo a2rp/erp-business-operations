@@ -4,7 +4,7 @@
 
 Ledgerly is a frontend-only ERP operations workspace for connecting sales orders, inventory, purchasing, and customer receivables. It is designed as a practical browser demo: each workspace shares the same live React state, so common handoffs can be explored without a backend.
 
-**Live demo:** [https://a2rp.github.io/erp-business-operations/](https://a2rp.github.io/erp-business-operations/)
+**GitHub Pages target:** [https://a2rp.github.io/erp-business-operations/](https://a2rp.github.io/erp-business-operations/). The app bundle is published to `gh-pages`; GitHub Pages still needs that branch selected in the repository settings before this URL serves the app.
 
 ## Workspaces
 
@@ -98,7 +98,7 @@ npm run preview
 npm run deploy
 ```
 
-The Vite base path and `homepage` are configured for GitHub Pages. `npm run deploy` builds the project and publishes the `dist` directory to the `gh-pages` branch. GitHub Pages serves the app at [https://a2rp.github.io/erp-business-operations/](https://a2rp.github.io/erp-business-operations/).
+The Vite base path and `homepage` are configured for GitHub Pages. `npm run deploy` builds the project and publishes the `dist` directory to the `gh-pages` branch. To activate the target URL, select `gh-pages` and the `/ (root)` folder as the GitHub Pages source in the repository settings. That repository setting is pending a connected GitHub account.
 
 ## Future improvements
 
